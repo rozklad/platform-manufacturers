@@ -120,11 +120,11 @@ class ManufacturerRepository implements ManufacturerRepositoryInterface {
 		if ($messages->isEmpty())
 		{
 			// Save the manufacturer
-			$manufacturer->fill($data)->save();
-
 			// Resluggify
-            if ( method_exists($manufacturer, 'resluggify') )
-            	$manufacturer->resluggify()->save();
+			if ( method_exists($manufacturer, 'resluggify') )
+				$manufacturer->fill($data)->resluggify()->save();
+			else
+				$manufacturer->fill($data)->save();
 
 			// Fire the 'sanatorium.manufacturers.manufacturer.created' event
 			$this->fireEvent('sanatorium.manufacturers.manufacturer.created', [ $manufacturer ]);
@@ -157,11 +157,11 @@ class ManufacturerRepository implements ManufacturerRepositoryInterface {
 		if ($messages->isEmpty())
 		{
 			// Update the manufacturer
-			$manufacturer->fill($data)->save();
-
 			// Resluggify
-            if ( method_exists($manufacturer, 'resluggify') )
-            	$manufacturer->resluggify()->save();
+			if ( method_exists($manufacturer, 'resluggify') )
+				$manufacturer->fill($data)->resluggify()->save();
+			else
+				$manufacturer->fill($data)->save();
 
 			// Fire the 'sanatorium.manufacturers.manufacturer.updated' event
 			$this->fireEvent('sanatorium.manufacturers.manufacturer.updated', [ $manufacturer ]);
