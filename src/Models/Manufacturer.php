@@ -19,7 +19,7 @@ class Manufacturer extends Model implements EntityInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	protected $table = 'shop_manufacturers';
+	protected $table = 'manufacturers';
 
 	/**
 	 * {@inheritDoc}

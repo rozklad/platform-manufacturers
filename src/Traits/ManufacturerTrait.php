@@ -4,7 +4,7 @@ trait ManufacturerTrait {
 
 	public function manufacturers()
     {
-        return $this->morphToMany('Sanatorium\Manufacturers\Models\Manufacturer', 'manufacturized', 'shop_manufacturized');
+        return $this->morphToMany('Sanatorium\Manufacturers\Models\Manufacturer', 'manufacturized', 'manufacturized');
     }
 
 }

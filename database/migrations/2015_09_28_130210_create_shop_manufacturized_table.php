@@ -12,7 +12,7 @@ class CreateShopManufacturizedTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('shop_manufacturized', function(Blueprint $table)
+		Schema::create('manufacturized', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('manufacturized_type');
@@ -35,7 +35,7 @@ class CreateShopManufacturizedTable extends Migration {
 			],
 			[
 				'namespace' => \Sanatorium\Manufacturers\Models\Manufacturer::getEntityNamespace(),
-				'type' => 'avatar',
+				'type' => 'image',
 				'slug' => 'manufacturer_logo',
 				'name' => 'Manufacturer logo',
 				'description' => 'Manufacturer logo',
@@ -70,7 +70,7 @@ class CreateShopManufacturizedTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('shop_manufacturized');
+		Schema::drop('manufacturized');
 	}
 
 }
