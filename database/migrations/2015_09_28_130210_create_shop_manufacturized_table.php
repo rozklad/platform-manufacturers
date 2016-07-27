@@ -27,7 +27,7 @@ class CreateShopManufacturizedTable extends Migration {
 		$attributes = [
 			[
 				'namespace' => \Sanatorium\Manufacturers\Models\Manufacturer::getEntityNamespace(),
-				'type' => 'text',
+				'type' => 'input',
 				'slug' => 'manufacturer_title',
 				'name' => 'Manufacturer title',
 				'description' => 'Manufacturer title',
